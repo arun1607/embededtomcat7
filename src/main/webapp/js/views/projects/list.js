@@ -10,7 +10,6 @@ define([ 'jquery', 'underscore', 'backbone',
 			this.collection.add({
 				name : "Ginger Kid"
 			});
-			// Compile the template using Underscores micro-templating
 			var compiledTemplate = _.template(projectsListTemplate, {
 				projects : this.collection.models
 			});
