@@ -1,16 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
+<html ng-app="nameApp">
 <head>
-<title>Jackie Chan</title>
-<!-- Load the script "js/main.js" as our entry point -->
-<script data-main="js/main" src="js/libs/require/require.js"></script>
+<meta charset="utf-8">
+<title>Angular.js Example</title>
+<script src="js/libs/angular/angular.min.js"></script>
+<script src="js/libs/angular/angular-route.min.js"></script>
+
+<script>
+	var app = angular.module('nameApp', []);
+
+	app.controller('ParentController', function($scope) {
+		$scope.person = {
+			greeted : false
+		};
+	});
+	app.controller('ChildController', function($scope) {
+		$scope.sayHello = function() {
+			$scope.person.name = "Ari Lerner";
+			$scope.person.greeted = true;
+		}
+	});
+</script>
 </head>
 <body>
-
-	<div id="container">
-		<div id="menu"></div>
-		<div id="content"></div>
+	<div ng-controller="ParentController">
+		<div ng-controller="ChildController">
+			<a  href="" ng-click="sayHello()">Say hello</a>
+		</div>
+		{{ person }}
 	</div>
-
 </body>
 </html>
