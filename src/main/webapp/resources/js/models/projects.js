@@ -1,4 +1,4 @@
-define([ 'underscore', 'backbone' ], function(_, Backbone) {
+define(function() {
 	var ProjectModel = Backbone.Model.extend({
 		defaults : {
 			name : "Harry Potter"

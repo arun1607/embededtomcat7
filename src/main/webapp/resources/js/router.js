@@ -1,6 +1,6 @@
 // Filename: router.js
-define([ 'jquery', 'underscore', 'backbone', 'views/projects/list',
-		'views/users/list' ], function($, _, Backbone, ProjectListView,
+define([ 'views/projects/list',
+		'views/users/list' ], function(ProjectListView,
 		UserListView) {
 	var AppRouter = Backbone.Router.extend({
 		routes : {
