@@ -1,4 +1,4 @@
 <%@page isELIgnored="true"%>
- <% _.each(projects, function(user) { %>
-<p><%=user.get('name')%></p>
-<% }); %>
+<script id="userTemplate" type="text/x-jquery-tmpl">
+${user}
+</script>

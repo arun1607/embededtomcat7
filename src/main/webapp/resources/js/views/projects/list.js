@@ -11,10 +11,9 @@ define([
 			}, {
 				name : 'John Mathew'
 			}]);
-			var compiledTemplate = _.template($(projectsListTemplate).filter(
-					'#list').html());
-			console.log(compiledTemplate(this.collection.toJSON()));
-			this.$el.html(compiledTemplate(this.collection.toJSON()));
+			var compileTemplate = $.tmpl($("#userTemplate"), {'user':'Ginger Kid'});
+			console.log(compileTemplate);
+			this.$el.html(compileTemplate);
 		}
 	});
 	// Returning instantiated views can be quite useful for having "state"

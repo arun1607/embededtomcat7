@@ -5,8 +5,9 @@
 require.config({
 	paths : {
 		jquery : 'libs/jquery/jquery-2.1.1.min',
-		lodash : 'libs/lodash/lodash.min',
-		backbone : 'libs/backbone/backbone-min'
+		underscore : 'libs/lodash/lodash.underscore.min',
+		backbone : 'libs/backbone/backbone-min',
+		templates : 'http://localhost:8084/app/template'
 	},
 	shim : {
 		jquery : {
@@ -16,7 +17,7 @@ require.config({
 			exports : '_',
 		},
 		backbone : {
-			deps : [ 'jquery', 'lodash' ],
+			deps : [ 'jquery', 'underscore' ],
 			exports : 'Backbone'
 			
 		},
@@ -31,11 +32,11 @@ require([
 
 // Load our app module and pass it to our definition function
 'app' ], function() {
-	// The "app" dependency is passed in as "App"
-	//$(function() {
-	//	_.templateSettings = {
-	//		interpolate : /\{\{([\s\S]+?)\}\}/g
-	//		};
-	//	});
+	
+	$(function() {
+		_.templateSettings = {
+			interpolate : /\{\{([\s\S]+?)\}\}/g
+			};
+		});
 	App.initialize();
 });
